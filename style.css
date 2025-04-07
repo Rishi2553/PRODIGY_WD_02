@@ -1,71 +1,88 @@
+:root {
+  --bg: #1e3c72;
+  --bg-light: #ffffffcc;
+  --text: #fff;
+  --glass: rgba(255, 255, 255, 0.1);
+}
+
+body.light {
+  --bg: #f0f0f0;
+  --text: #222;
+  --glass: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  height: 100vh;
+  background: var(--bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  color: #333;
+  transition: background 0.3s;
 }
 
+.container {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+  color: var(--text);
+}
 
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #444;
-}
-
-
-#container {
-  background-color: #d5b8b8;
-  padding: 20px 30px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-#display {
   font-size: 2.5rem;
-  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
   margin-bottom: 20px;
-  color: #111;
 }
 
-#container button {
-  padding: 10px 20px;
-  font-size: 1rem;
+button {
+  padding: 10px 16px;
   border: none;
-  border-radius: 5px;
-  margin: 0 5px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
   cursor: pointer;
-  color: #fff;
-  /* transition: background-color 0.3s ease; */
+  transition: 0.2s ease;
+  flex: 1 1 40%;
 }
 
-#start {
-  background-color: #28a745;
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
 }
 
-#start:hover {
-  background-color: #218838;
+.laps-section {
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 0.95rem;
 }
 
-#stop {
-  background-color: #dc3545;
+.laps-section div {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 0;
 }
 
-#stop:hover {
-  background-color: #c82333;
-}
-
-#reset {
-  background-color: #ffc107;
-  color: #333;
-}
-
-#reset:hover {
-  background-color: #e0a800;
+.bottom-controls {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
